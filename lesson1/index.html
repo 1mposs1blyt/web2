@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson1</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>         
+    <script src="script.js"></script>
+    <script type="text/javascript" src="books.json"></script>
+
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s6"><input id="deleteID" type="search" placeholder="id"></div>
+            <div class="col s6"><button onclick="DeleteBook()">Удалить</button></div>
+        </div>
+        <div class="row">
+            <div class="col s2"><input id="updt1" placeholder="id"></div>
+            <div class="col s2"><input id="updt2"placeholder=author></div>
+            <div class="col s2"><input id="updt3"placeholder=name></div>
+            <div class="col s2"><input id="updt4"placeholder=date></div>
+            <div class="col s4"><button onclick="updateBOOK()">Изменить</button></div>
+        </div>
+        <div class="row">
+            <div class="col s2"><input id="crt1" placeholder="id"></div>
+            <div class="col s2"><input id="crt2"placeholder=author></div>
+            <div class="col s2"><input id="crt4"placeholder=name></div>
+            <div class="col s2"><input id="crt4"placeholder=date></div>
+            <div class="col s4"><button onclick="createBook()">Создать</button></div>
+        </div>
+        <div class="row">
+            <div class="col s3"><input id="1" type="search" placeholder="search by number"><button onclick="searchbbbyid()">search</button></div>
+            <div class="col s3"><input id="2" type="search" placeholder="search by author"><button onclick="searchbbbyauthor()">search</button></div>
+            <div class="col s3"><input id="3" type="search" placeholder="search by name"><button onclick="searchbbbyname()">search</button></div>
+            <div class="col s3"><input id="4" type="search" placeholder="search by date"><button onclick="searchbbbydate()">search</button></div>
+        </div>
+        <div class="row">
+            <button onclick="ShowAllBooks()">Показать все</button>
+            <ul>
+                <li class="">Уникалььный номер книги: №{{id}}</li>
+                <li class="">Автор: {{author}}</li>
+                <li class="">Название книги: {{name}}</li>
+                <li class="">Написана: {{date}}</li>
+            </ul>
+        </div>
+        <div class="row" id="">
+
+        </div>
+
+   
+    </div>
+    
+
+</body>
+</html>
