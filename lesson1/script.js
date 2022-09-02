@@ -26,29 +26,37 @@ let data = [
 ]
 // console.log(data)
 function createBook() {
-    let id = document.getElementById("crt1")
-    let author = document.getElementById("crt2")
-    let name = document.getElementById("crt2")
-    let date = document.getElementById("crt3")
-    let findId = false; // флаг
+    let id = document.querySelector("#crt1")
+    let author = document.querySelector("#crt2")
+    let name = document.querySelector("#crt3")
+    let date = document.querySelector("#crt4")
+    let findId = true; // флаг
     data.forEach(function (book) {
-        if (book.id == id) {
-            findId = true
+        if (book.id != id) {
+            findId = false
         }
     })
-    if (findId) {
-        return "Такая книга уже есть"
-    } else {
+    if (findId == false) {
         data.push({
-            "id": id,
-            "author": author,
-            "name": name, 
-            "date": date
+            "id": id.value,
+            "author": author.value,
+            "name": name.value,
+            "date": date.value
         })
+        console.log(
+            "Книга добавлена"//,
+            //     "id" + ':' + id.value,
+            //     "author" + ':' + author.value,
+            //     "name" + ':' + name.value,
+            //     "date" + ':' + date.value
+        )
         return "Книга добавлена"
+    } else {
+        console.log("Такая книга уже есть")
+        return "Такая книга уже есть"
     }
 }
-function updateBOOK() {   
+function updateBOOK() {
     let array = []
     let updt2 = document.getElementById("updt2")
     let updt3 = document.getElementById("updt3")
@@ -63,7 +71,7 @@ function updateBOOK() {
             data[i]["date"] = updt4.value
             console.log(updt2.value)
             console.log(data)
-        }else console.log('ничего не найдено')
+        } else console.log('ничего не найдено')
     }
 }
 function DeleteBook() {
@@ -73,19 +81,19 @@ function DeleteBook() {
         if (data[i]["id"] == id.value) {
             // array.push(data[i]["author"], data[i]["name"], data[i]["date"], data[i]["id"])
             console.log(data.indexOf(data[i]))
-        
-            data.splice(data.indexOf(data[i]) ,data.indexOf(data[i])+1)
+
+            data.splice(data.indexOf(data[i]), data.indexOf(data[i]) + 1)
             // console.log(updt2.value)
             console.log(data)
-        }else console.log('ничего не найдено')
+        } else console.log('ничего не найдено')
     }
 }
-function ShowAllBooks(id, author, name, date){
+function ShowAllBooks(id, author, name, date) {
     let array = []
-    for (let i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++) {
         console.log(data[i])
     }
-    
+
 }
 // РАБОТАЕТ НЕ ТРОГАТЬ!!!///////////////////////////////////////////////////////////////////////
 function searchbbbyid() {
@@ -93,12 +101,12 @@ function searchbbbyid() {
     console.log("По поиску:", id.value)
     let array = []
     for (let i = 0; i < data.length; i++) {
-        if (data[i]["id"] == id.value ) {
+        if (data[i]["id"] == id.value) {
             array.push(data[i]["author"], data[i]["name"], data[i]["date"], data[i]["id"])
             console.log(array)
-        }else console.log('ничего не найдено')
+        } else console.log('ничего не найдено')
     }
-    
+
 
 }
 function searchbbbyauthor() {
@@ -109,7 +117,7 @@ function searchbbbyauthor() {
         if (data[i]["author"] == author.value) {
             array.push(data[i]["author"], data[i]["name"], data[i]["date"], data[i]["id"])
             console.log(array)
-        }else console.log('ничего не найдено')
+        } else console.log('ничего не найдено')
     }
 }
 function searchbbbyname() {
@@ -131,7 +139,7 @@ function searchbbbydate() {
         if (data[i]["date"] == date.value) {
             array.push(data[i]["author"], data[i]["name"], data[i]["date"], data[i]["id"])
             console.log(array)
-        }else console.log('ничего не найдено')
+        } else console.log('ничего не найдено')
     }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////
