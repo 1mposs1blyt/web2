@@ -104,7 +104,7 @@ class adds {
         
     }
     async addFind(req, res) {
-        Adds.find().sort({onTopDate:1},function (err, allAdds) {
+        Adds.find( function (err, allAdds) {
             res.render('adds.html', { allAdds })
         })
     }
