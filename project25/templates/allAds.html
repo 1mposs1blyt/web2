@@ -1,0 +1,18 @@
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+{% asyncEach item in allAdds %}
+<ul>
+    <hr>
+    <li>title:<h1>{{item.title}}</h1></li>
+    <li>desc:<h1>{{item.description}}</h1></li>
+    <li>image: <h1>{{item.image}}</h1></li>
+    <li>id:<h1>{{item._id}}</h1></li>
+    <li>OnTop?:<h1>{{item.ontop}}</h1></li>
+    <li>onTopDate?:<h1>{{item.onTopDate}}</h1></li>
+    <li>?Liked?:<h1>{{item.liked}}</h1></li>
+    <li><input type="button" id="like" onclick="like()" value="{{item._id}}"></li>
+    <hr>
+</ul>
+{%else%}
+<h1>Not working:( or can't find data in database</h1>
+{% endeach %}
