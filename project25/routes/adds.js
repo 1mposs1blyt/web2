@@ -104,7 +104,7 @@ class adds {
         
     }
     async addFind(req, res) {
-        Adds.find( function (err, allAdds) {
+        Adds.find( function (err, allAdds) {//сделать find().sort()1
             res.render('adds.html', { allAdds })
         })
     }
