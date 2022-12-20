@@ -15,7 +15,8 @@ const AddSchema = new Schema({
     image: String,
     ontop:String,
     onTopDate:String,
-    liked:String
+    liked:String,
+    userId:String
 })
 // const LikedSchema = new Schema({
 //     title: String,

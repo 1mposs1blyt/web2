@@ -3,7 +3,8 @@ const Router = express.Router();
 const controller = require('../services/addController');
 const addsController = new controller();
 const Adds = require('../models/addsDB')
-
+// const session = require('../app.js')
+// import session from '../app.js';
 class adds {
     constructor() {
         Router.get('/', this.addFind);
@@ -27,7 +28,6 @@ class adds {
         })
         Adds.find({}, function (err, allAdds) {
             console.log('Ready!');
-            // res.send({allAdds})
             res.render('allAds.html', { allAdds })
         })
     }
@@ -36,12 +36,14 @@ class adds {
         let description = req.body['description'];
         let image = req.body['image'];
         let onTopDate = req.body['onTopDate'];
+        let userId = session
         const add = new Adds({
             title: title,//req.body.title
             description: description,//req.body.description
             image: image,//req.body.image
             ontop: false,
-            onTopDate:onTopDate
+            onTopDate:onTopDate,
+            userId:userId
         })
         add.save({}, function (err, allAdds) {
             if (err) return console.log(err);
