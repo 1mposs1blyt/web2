@@ -8,7 +8,7 @@ const adds = require('./routes/adds');
 const profile = require('./routes/profile');
 const liked = require('./routes/liked')
 const create = require('./routes/create')
-const auth = require('./routes/auth')
+const Auth = require('./routes/auth.js')
 // var env = new njk.Environment(AsyncLoaderFromDatabase, opts);
 var CookieParser = require('cookie-parser')
 
@@ -51,11 +51,16 @@ app.use(session({
     },
     resave: false,
 }))
+
+
 app.use(CookieParser())
+// console.log(String(session))
+// console.log(RedisStore)
 // app.use(bodyParser());
 
 // app.use((req, res, next) => {
 //     let unauth = ['/']
+//     let user = req.sessionID;
 //     console.log(req.url)
 //     if (!unauth.includes(req.url) && req.session.user) {
 //         next()
@@ -74,7 +79,7 @@ app.use('/adds/', adds);
 app.use('/profile/', profile);
 app.use('/liked/', liked);
 app.use('/create/', create);
-
+app.use('/auth/', Auth);
 
 
 
