@@ -36,7 +36,7 @@ class adds {
         let description = req.body['description'];
         let image = req.body['image'];
         let onTopDate = req.body['onTopDate'];
-        let userId = session
+        let userId = req.sessionID
         const add = new Adds({
             title: title,//req.body.title
             description: description,//req.body.description
