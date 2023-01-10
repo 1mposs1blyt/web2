@@ -1,8 +1,8 @@
 <!-- eslint-disable -->
 <template>
-  <img src="..\public\img\GameMap.png" height="200" width="200">
   <RouterView></RouterView>
-  
+  <!-- <router-view></router-view> -->
+  <h1>hello world</h1>
 </template>
 <script>
 /* eslint-disable */
